@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import {
     Form, Input, Radio, Button, Dropdown, Label, Header
 } from 'semantic-ui-react';
+import { bmrOptions } from './../constants/bmrConstants';
 
-
-const BmrCalculatorComponent = ({ bmrState, onBmrChange, options, bmrFormula }) =>
+const BmrCalculatorComponent = ({ bmrState, updateBmrData, calculateBmr }) =>
 
     <Form>
         <Header>BMR Calculator</Header>
@@ -17,7 +17,7 @@ const BmrCalculatorComponent = ({ bmrState, onBmrChange, options, bmrFormula }) 
                 name="gender"
                 value="male"
                 checked={bmrState.gender === 'male'}
-                onChange={onBmrChange}
+                onChange={updateBmrData}
             />
         </Form.Field>
         <Form.Field>
@@ -26,28 +26,28 @@ const BmrCalculatorComponent = ({ bmrState, onBmrChange, options, bmrFormula }) 
                 name="gender"
                 value="female"
                 checked={bmrState.gender === 'female'}
-                onChange={onBmrChange}
+                onChange={updateBmrData}
             />
         </Form.Field>
         <Form.Field>
-            <Input placeholder="Age" name="age" onChange={onBmrChange} />
+            <Input placeholder="Age" name="age" onChange={updateBmrData} />
         </Form.Field>
         <Form.Field>
-            <Input placeholder="Height in Centimeters" name="height" onChange={onBmrChange} />
+            <Input placeholder="Height in Centimeters" name="height" onChange={updateBmrData} />
         </Form.Field>
         <Form.Field>
-            <Input placeholder="Weight in Kg" name="weight" onChange={onBmrChange} />
+            <Input placeholder="Weight in Kg" name="weight" onChange={updateBmrData} />
         </Form.Field>
         <Form.Field>
-            <Dropdown placeholder='Select Activity level' onChange={onBmrChange} name="activity_level" fluid selection options={options} />
+            <Dropdown placeholder='Select Activity level' onChange={updateBmrData} name="activity_level" fluid selection options={bmrOptions} />
         </Form.Field>
         <Form.Field>
             <Button
                 primary
-                onClick={bmrFormula.bind(undefined, bmrState, onBmrChange)}>Calculate</Button>
+                onClick={()=>{calculateBmr(bmrState)}}>Calculate</Button>
         </Form.Field>
         <Form.Field>
-            <Input name="weight" value={bmrState.bmr || ''} />
+            <Input name="bmr" value={bmrState.bmr || ''} />
         </Form.Field>
     </Form>
 

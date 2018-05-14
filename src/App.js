@@ -9,23 +9,12 @@ import {
 
 class App extends Component {
 
-  constructor() {
-    super();
-    this.state = {};
-    this.handleForm = this.handleForm.bind(this);
-  }
-
-  handleForm(e, { name, value }) {
-    console.log("e", this.state);
-    this.setState({ [name]: value });
-  }
-
   render() {
     return (
       <div className="App">
         <Grid columns={1} padded>
           <Grid.Column>
-            <BmrCalculator bmrState={this.state} onBmrChange={this.handleForm}></BmrCalculator>
+            <BmrCalculator></BmrCalculator>
           </Grid.Column>
         </Grid>
 

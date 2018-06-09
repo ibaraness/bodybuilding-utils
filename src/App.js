@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import BmrCalculator from './cantainers/bmr-calculator/BmrCalculator';
-
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import UserRegistration from './cantainers/UserRegistration';
 import {
-  Form, Input, Radio, Grid, Segment
-} from 'semantic-ui-react'
+  Grid, Container
+} from 'semantic-ui-react';
+
 
 class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Grid columns={1} padded>
-          <Grid.Column>
-            <BmrCalculator></BmrCalculator>
-          </Grid.Column>
-        </Grid>
-
-      </div>
+      <Router>
+        <Container>
+          <Grid columns={1} padded>
+            <Grid.Column>
+              <Route exact path="/" component={UserRegistration} />
+              <Route exact path="/calculator" component={BmrCalculator} />
+            </Grid.Column>
+          </Grid>
+        </Container>
+      </Router>
     );
   }
 }

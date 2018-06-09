@@ -1,3 +1,7 @@
 export const CALCULATE_BMR = 'CALCULATE_BMR';
 
 export const UPDATE_BMR_DATA = 'UPDATE_BMR_DATA';
+
+export const UPDATE_USER_DATA = 'UPDATE_USER_DATA';
+
+export const OPEN_BMR_MODAL = 'OPEN_BMR_MODAL';

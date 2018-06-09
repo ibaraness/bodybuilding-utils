@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-    Form, Input, Radio, Button, Dropdown, Label, Header
+    Form, Input, Radio, Button, Dropdown, Header
 } from 'semantic-ui-react';
 import { bmrOptions } from './../constants/bmrConstants';
 

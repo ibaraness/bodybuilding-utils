@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
 import BmrCalculatorComponent from './../../components/BmrCalculatorComponent';
-import { bmrFormula } from './../../utils/bmr-formula';
 import { connect } from 'react-redux';
 import {calculateBmr, updateBmrData} from './../../actions/bmr';
 
